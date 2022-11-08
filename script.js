@@ -1,4 +1,4 @@
-let loc = document.getElementById("location");
+let loc = document.getElementById("city");
 let tempval = document.getElementById("tempVal");
 let climate = document.getElementById("climate");
 const search_Input = document.getElementById("searchInput");
@@ -14,19 +14,24 @@ search_Button.addEventListener("click", (e)=>
 const getWeather = async (city)=>
 {
     try{
-        const response = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=fce3b50fb2b74cb2294fb3aef264c372`, {mode: 'cors'});
-        const weatherData = await response.json();
-        console.log(weatherData);
-        const {name} = weatherData;
-        const {feels_like} = weatherData.main;
-        const {id, main} = weatherData.weather[0];
-        loc.textContent = name;
-        climate.textContent = main;
-        tempval.textContent = Math.round(feels_like-273.15)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=fce3b50fb2b74cb2294fb3aef264c372`, {mode: 'cors'})
+        .then(data => data.json())
+        .then((res) => {
+            weatherData = res;
+            const {name} = weatherData;
+            console.log(name);
+            const {feels_like} = weatherData.main;
+            const {id, main} = weatherData.weather[0];
+            loc.textContent = name;
+            climate.textContent = main;
+            temp = Math.round(feels_like-273.15)
+            tempval.innerHTML = temp + '<span>&#176</span>C';
+        })
     }
     catch(error)
     {
-        alert('City not found')
+        console.log(error);
+        // alert('City not found')
     }
 }
 
@@ -47,14 +52,13 @@ window.addEventListener("load", ()=>{
             })
             .then(data =>
                 {
-                    // console.log(data);
+                    console.log(data);
                     const {name} = data;
                     const {feels_like} = data.main;
                     const {id,main} = data.weather[0];
                     loc.textContent = name;
-                    climate.textContent = main;
-                    tempval.textContent = Math.round(feels_like-273.15);
-                    console.log(data);
+                    temp = Math.round(feels_like-273.15)
+                    tempval.innerHTML = temp + '<span>&#176</span>C';
                 })
         }
     )}

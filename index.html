@@ -46,7 +46,7 @@
                     Here's the weather for your location today, right now!!
                 </p>
                 </p>
-                <form id = searchForm>
+                <div id = searchForm>
                     <input type = "search"
                     placeholder="Enter Your city"
                     id = "searchInput"
@@ -55,12 +55,13 @@
                     />
                     <br>
                     <button id="searchButton">Search</button>
-                </form>
+                </div>
                 <main id="appLoc">
                     <div id="location">
                         <p>-----</p>
+                        <div id="city"></div>
                         <div id="temp">
-                            <p><span id="tempVal">------</span><span id="tempUnit">&#176C</span></p>
+                            <div id="tempVal"></div>
                         </div>
                     </div>
                     <div id="climate">

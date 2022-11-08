@@ -191,12 +191,12 @@ h3{
 }
 main{
     align-items: center;
-    padding: 20px;
+    /* padding: 20px; */
     margin-top: 10px;
     background-color: #fff3f3;
     border-radius: 20px;
-    width: 360px;
-    height: 360px;
+    /* width: 360px; */
+    /* height: 360px; */
     display: block;
     margin-right: auto;
     margin-left: auto;
