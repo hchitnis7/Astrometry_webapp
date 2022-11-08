@@ -38,21 +38,23 @@ window.addEventListener("load", ()=>{
         navigator.geolocation.getCurrentPosition((position)=>
         {
             long = position.coords.longitude;
-            lat = position.coords.lattitude;
-            //const proxy = "https://cors-anywhere.herokuapp.com/";
-            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid={fce3b50fb2b74cb2294fb3aef264c372}`;
+            lat = position.coords.latitude;
+            console.log(lat,long);
+            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=fce3b50fb2b74cb2294fb3aef264c372`
             fetch(api).then((response)=>
             {
                 return response.json();
             })
             .then(data =>
                 {
+                    // console.log(data);
                     const {name} = data;
                     const {feels_like} = data.main;
                     const {id,main} = data.weather[0];
                     loc.textContent = name;
                     climate.textContent = main;
                     tempval.textContent = Math.round(feels_like-273.15);
+                    console.log(data);
                 })
         }
     )}
