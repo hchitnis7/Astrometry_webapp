@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name  = "viewport" content = "width = device-width, initial -scale = 1.0">
+    <title>SKYCRAWLER</title>
+    <link rel = "stylesheet " href = "style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+<link rel = "stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+</head> 
+<body>
+    <section class="header">
+        <nav>
+            <a href = "index.html"><img src = "images/logo.png"></a>
+            <div class="nav-links" id = "navLinks">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">PLATESOLVING</a></li>
+                    <li><a href="">WEATHER HELPER</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="">CONTACT</a></li>
+                    <li><a href="">LOGIN</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()"></i>
+        </nav>
+        <div class ="textbox">
+            <h1>PLATESOLVING MADE EASY!!</h1>
+            <p>This is your one shot solution to platesolve a given image for free as well as get a prediction about weather<br> in the nights to come
+                we use astrometry.net, and another weather api to get all out results!!</p>
+            <a href = "" class = "hero-btn">Heres more about us..</a>
+
+        </div>
+
+    </section>
+    <section class  = "weather" >
+        <h1>Weather services that we offer</h1>
+        <p>We provide you with weather data for the next 10 days, as well as the dats on which there will be a clear sky!</p>
+        <div class = "row">
+            <div class = "weather-ten">
+                <h3>CURRENT WEATHER</h3>
+                <p>
+                    Here's the weather for your location today, right now!!
+                </p>
+                </p>
+                <form id = searchForm>
+                    <input type = "search"
+                    placeholder="Enter Your city"
+                    id = "searchInput"
+                    required
+                    autocomplete = "off"
+                    />
+                    <br>
+                    <button id="searchButton">Search</button>
+                </form>
+                <main id="appLoc">
+                    <div id="location">
+                        <p>-----</p>
+                        <div id="temp">
+                            <p><span id="tempVal">------</span><span id="tempUnit">&#176C</span></p>
+                        </div>
+                    </div>
+                    <div id="climate">
+                        <p>-----</p>
+                    </div>
+                </main>
+            </div>
+            <div class = "weather-ten">
+                <h3>PREDICTION</h3>
+                <p>
+                    Here is the data that will be provided by the weather api for the next 10 days and from that
+                    we will be getting a estimate as to how and when we can take more new photos
+                </p>
+            </div>
+            <div class = "weather-ten">
+                <h3>PREDICTION</h3>
+                <p>
+                    Here is the data that will be provided by the weather api for the next 10 days and from that
+                    we will be getting a estimate as to how and when we can take more new photos
+                </p>
+            </div>
+            
+        </div>
+    </section>
+    <!---------------javascript for toggle menu----------------->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showmenu()
+        {
+            navLinks.style.right = "0";
+        }   
+        function hidemenu()
+        {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+    
+</body>
+</html>
