@@ -30,8 +30,8 @@ const getWeather = async (city)=>
     }
     catch(error)
     {
-        console.log(error);
-        // alert('City not found')
+        //console.log(error);
+        alert('City not found')
     }
 }
 
@@ -56,6 +56,7 @@ window.addEventListener("load", ()=>{
                     const {name} = data;
                     const {feels_like} = data.main;
                     const {id,main} = data.weather[0];
+                    climate.innerHTML = main;
                     loc.textContent = name;
                     temp = Math.round(feels_like-273.15)
                     tempval.innerHTML = temp + '<span>&#176</span>C';
