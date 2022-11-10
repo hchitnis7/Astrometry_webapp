@@ -22,7 +22,7 @@
                     <li><a href="">WEATHER HELPER</a></li>
                     <li><a href="">BLOG</a></li>
                     <li><a href="">CONTACT</a></li>
-                    <li><a href="">LOGIN</a></li>
+                    <li><a href="C:\mini_projjie\login.html">LOGIN</a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showmenu()"></i>
@@ -66,27 +66,52 @@
                     <div id="climate">
                     </div>
                 </main>
-            </div>
-            <div class = "weather-ten">
-                <h3>5 day Forecast</h3>
-                <p>
-                    Here is the data that will be provided by the weather api for the next 5 days and from that
-                    we will be getting a estimate as to how and when we can take more new photos
-                </p>
-                <p>
-                    <main id="5_day">
-                       
-                        <p class="weather" id="day1"></p>
-                        <div class="image"><img src="dots.png" class="imgClass" id="img3"></div>
-                        <p class="minValues" id="day3Min">Loading...</p>
-                        <p class="maxValues" id="day3Max">Loading...</p>
-                    </div>
-                    </main>
-                </p>
-            </div>
-            
+            </div> 
             
         </div>
+        <div class = "weather-fi">
+            <h3>5 day Forecast</h3>
+            <p>
+                Here is the data that will be provided by the weather api for the next 5 days and from that
+                we will be getting a estimate as to how and when we can take more new photos
+            </p>
+            <p>
+                <main id="5_day">
+                    <div id = "weatherContainer">
+                        <div id="iconsContainer">    
+                            <div class = "icons">
+                                <h3 class="weather" id="day1"></h3>
+                                <p class="minValues" id="day1Min"></p>
+                                <p class="maxValues" id="day1Max"></p>
+                            </div>
+                            <div class = "icons">
+                                <h3 class="weather" id="day2"></h3>
+                                <p class="minValues" id="day2Min"></p>
+                                <p class="maxValues" id="day2Max"></p>
+                            </div>
+                            <div class = "icons">
+                                <h3 class="weather" id="day3"></h3>
+                                <p class="minValues" id="day3Min"></p>
+                                <p class="maxValues" id="day3Max"></p>
+                            </div>
+                            <div class = "icons">
+                                <h3 class="weather" id="day4"></h3>
+                                <p class="minValues" id="day4Min"></p>
+                                <p class="maxValues" id="day4Max"></p>
+                            </div>
+                            <div class = "icons">
+                                <h3 class="weather" id="day5"></h3>
+                                <p class="minValues" id="day5Min"><span></span></p>
+                                <p class="maxValues" id="day5Max"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </main>
+                
+            </p>
+        </div>
+        
     </section>
     <!---------------javascript for toggle menu----------------->
     <script>
@@ -101,5 +126,6 @@
         }
     </script>
     <script src="./script.js"></script>
+    <script src = "./script_forecast.js"></script>
 </body>
 </html>
